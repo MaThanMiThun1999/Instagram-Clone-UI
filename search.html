@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="instagram clone">
+    <meta name="keywords" content="HTML,CSS,Tailwind,mathanmithun,instagram,clone,ui">
+    <meta name="author" content="mathanmithun">
+    <title>Instagram Clone UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="/icons/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/icons/apple-touch.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+  .card {
+    background-image: linear-gradient(
+  220deg,
+  hsl(305deg 83% 43%) 0%,
+  hsl(317deg 100% 44%) 10%,
+  hsl(326deg 100% 47%) 20%,
+  hsl(333deg 100% 49%) 30%,
+  hsl(343deg 97% 53%) 40%,
+  hsl(358deg 94% 60%) 50%,
+  hsl(12deg 100% 60%) 60%,
+  hsl(24deg 100% 56%) 70%,
+  hsl(34deg 100% 52%) 80%,
+  hsl(42deg 100% 50%) 90%,
+  hsl(48deg 100% 50%) 100%
+);
+  }
+}
+@layer utilities {
+ .no-scrollbar::-webkit-scrollbar {
+      display: none;
+ }
+ .no-scrollbar {
+      -ms-overflow-style: none; 
+      scrollbar-width: none; 
+ }
+}
+  </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary_blue: "#1877F2",
+                        secondary_gray: "#EFEFEF",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section class="max-w-md mx-auto overflow-hidden md:border-x-2 md:shadow-2xl">
+
+        <div id="fullscreen" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50">
+ 
+            <div class="flex flex-col items-center justify-center h-full">
+                <div id="closeFullscreen" class="absolute top-4 right-4 cursor-pointer text-white text-lg">Close</div>
+                <div class="w-[95%] mx-auto md:max-w-md">
+                    <div class="w-full bg-white rounded-t-lg">
+                        <div class="flex items-center justify-between py-2 w-[95%] mx-auto">
+                            <div class="flex items-center gap-2">
+                                <img class="w-7 h-7 rounded-full" src="/icons/MaThanMiThun.jpg" alt="">
+                            <h1 class="font-bold">its.me_mathan_mithun</h1>
+                            </div>
+                            <div>
+                                <img src="./icons/dots.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <img id="fullscreenImage" class="w-full md:max-w-md" src="" alt="">
+                    <div class="w-full bg-white rounded-b-lg">
+                        <div class="flex w-[95%] py-2 mx-auto items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <img src="/icons/heart-Vector.svg" alt="" srcset="">
+                                <img src="/icons/comment.svg" alt="" srcset="">
+                                <img class="mt-1" src="/icons/share.svg" alt="" srcset="">
+                                                                
+                            </div>
+                            <div>
+                                <img src="/icons/saved.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          
+        </div>
+
+        <div
+            class="w-[100%] border-b bg-white pb-[0px] mx-auto px-4 fixed top-0 max-w-md md:max-w-md flex justify-between items-center">
+            <div>
+                <h1 class="font-bold" id="currentTime">9:20 AM</h1>
+            </div>
+            <div class="flex space-x-1 items-center">
+                <img src="/icons/Mobile-Signal.svg" alt="">
+                <img src="/icons/Wifi-icon.svg" alt="">
+                <img src="/icons/battery.svg" alt="">
+                <h1 class="font-bold" id="battery">70%</h1>
+            </div>
+        </div>
+        <hr class="border-none">
+
+        <hr class="border-b">
+        <div class="w-[95%] z-[-1] mx-auto justify-between items-center mt-8 relative">
+            <input class="bg-secondary_gray outline-none w-full px-12 rounded-lg py-2" type="text" placeholder="Search"
+                name="" id="">
+            <span class="absolute top-[6px] left-2">
+                <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#00000"
+                        stroke-width="0.144">
+                        <path
+                            d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </span>
+        </div>
+
+        <div class="w-[100%] mx-auto mt-2 grid grid-cols-3 gap-1">
+
+            <!--Grid Layout 1-->
+            <!-- Image 1 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-17.png" alt="Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="row-span-2 col-span-2">
+                <video class="w-full h-full object-cover" src="/video/fish.mp4" autoplay muted loop
+                    alt="Image 3"></video>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-18.png" alt="Image 3">
+            </div>
+            <!--Grid Layout 2-->
+            <!-- Image 1 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-1.png" alt="Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="col-span-1 ">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-2.png" alt="Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="row-span-2">
+                <a href="/reels.html">
+                    <video class="w-full h-full object-cover" src="/video/Spiderman.mp4" autoplay muted loop
+                    alt="Image 3"></video>
+                </a>
+            </div>
+            <!-- Image 4 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-4.png" alt="Image 4">
+            </div>
+            <!-- Image 5 -->
+            <div class="col-span-1\">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-5.png" alt="Image 5">
+            </div>
+
+            <!--Grid Layout 3-->
+
+            <div class="row-span-2">
+                <a href="/reels.html">
+                    <video class="w-full h-full object-cover" src="/video/developer.mp4" autoplay muted loop
+                    alt="Image 1"></video>
+                </a>
+            </div>
+            <!-- Image 2 -->
+            <div class="col-span-1 ">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-7.png" alt="Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-8.png" alt="Image 3">
+            </div>
+            <!-- Image 4 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-9.png" alt="Image 4">
+            </div>
+            <!-- Image 5 -->
+            <div class="col-span-1\">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-10.png" alt="Image 5">
+            </div>
+
+            <!--Grid Layout 4-->
+            <!-- Image 1 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-11.png" alt="Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="col-span-1 ">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-12.png" alt="Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-13.png" alt="Image 3">
+            </div>
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-14.png" alt="Image 3">
+            </div>
+            <!-- Image 4 -->
+            <div class="col-span-1">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-15.png" alt="Image 4">
+            </div>
+            <!-- Image 5 -->
+            <div class="col-span-1\">
+                <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-16.png" alt="Image 5">
+            </div>
+
+
+        </div>
+
+
+        <div class="grid w-[100%] grid-cols-5 items-center bg-white border-t-[1px] border-gray-200 justify-center py-3 fixed bottom-0 max-w-md">
+            <div class="w-[20%] mx-auto">
+                <a href="/home.html"><img src="/icons/home.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="#"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="0.144"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="/upload.html"><img src="/icons/ss-Icon.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="/reels.html"><img src="/icons/pack-icons.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="/index.html"><img class="rounded-full border-2 border-black scale-125" src="./icons/MaThanMiThun.jpg" alt=""></a>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    // Get all clickable images
+    const clickableImages = document.querySelectorAll('.clickable-image');
+  
+    // Loop through each clickable image and add click event listener
+    clickableImages.forEach(image => {
+      image.addEventListener('click', () => {
+        const imageUrl = image.getAttribute('src');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        fullscreenImage.setAttribute('src', imageUrl);
+        document.getElementById('fullscreen').classList.remove('hidden');
+      });
+    });
+  
+    // Close fullscreen on click
+    document.getElementById('closeFullscreen').addEventListener('click', () => {
+      document.getElementById('fullscreen').classList.add('hidden');
+    });
+  </script>
+
+<script>
+    function getCurrentTime() {
+        const currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+
+        // Convert hours to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+        // Add leading zero to single digit minutes
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+
+        // Format the time
+        const currentTimeString = hours + ':' + minutes + ' ' + ampm;
+
+        return currentTimeString;
+    }
+
+    // Update the time every second
+    function updateTime() {
+        document.getElementById('currentTime').innerHTML = getCurrentTime();
+        setTimeout(updateTime, 1000); // Update every second
+    }
+
+    // Call updateTime once to start immediately
+    updateTime();
+</script>
+
+<script>
+    function getBatteryPercentage() {
+        // Check if Battery Status API is supported
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(function (battery) {
+                // Update battery percentage when it changes
+                function updateBatteryStatus() {
+                    var batteryPercentage = Math.round(battery.level * 100);
+                    document.getElementById('battery').textContent = batteryPercentage + "%";
+                }
+
+                // Initial call to update battery status
+                updateBatteryStatus();
+
+                // Listen for changes in battery status
+                battery.addEventListener('levelchange', updateBatteryStatus);
+            });
+        } else if ('battery' in navigator) {
+            // For older implementations that use navigator.battery
+            var batteryPercentage = Math.round(navigator.battery.level * 100);
+            document.getElementById('battery').textContent = batteryPercentage + "%";
+        } else {
+            // Fallback to a default value if battery information is not available
+            document.getElementById('battery').textContent = "N";
+        }
+    }
+
+    // Call the function to get battery percentage when the page loads
+    window.onload = getBatteryPercentage;
+</script>
+
+</html>

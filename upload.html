@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="instagram clone">
+  <meta name="keywords" content="HTML,CSS,Tailwind,mathanmithun,instagram,clone,ui">
+  <meta name="author" content="mathanmithun">
+  <title>Instagram Clone UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="/icons/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/icons/apple-touch.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+     @layer components {
+  .card {
+    background-image: linear-gradient(
+  220deg,
+  hsl(305deg 83% 43%) 0%,
+  hsl(317deg 100% 44%) 10%,
+  hsl(326deg 100% 47%) 20%,
+  hsl(333deg 100% 49%) 30%,
+  hsl(343deg 97% 53%) 40%,
+  hsl(358deg 94% 60%) 50%,
+  hsl(12deg 100% 60%) 60%,
+  hsl(24deg 100% 56%) 70%,
+  hsl(34deg 100% 52%) 80%,
+  hsl(42deg 100% 50%) 90%,
+  hsl(48deg 100% 50%) 100%
+);
+  }
+}
+@layer utilities {
+ .no-scrollbar::-webkit-scrollbar {
+      display: none;
+ }
+ .no-scrollbar {
+      -ms-overflow-style: none; 
+      scrollbar-width: none; 
+ }
+}
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            primary_blue: "#1877F2",
+            secondary_gray: "#EFEFEF",
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <section class="max-w-md mx-auto overflow-hidden md:border-x-2 md:shadow-2xl">
+
+        <div class="w-[100%] border-b bg-white pb-[0px] mx-auto px-4 fixed top-0 max-w-md md:max-w-md flex justify-between items-center">
+            <div>
+                <h1 class="font-bold" id="currentTime">9:20 AM</h1>
+            </div>
+            <div class="flex space-x-1 items-center">
+                <img src="/icons/Mobile-Signal.svg" alt="">
+                <img src="/icons/Wifi-icon.svg" alt="">
+                <img src="/icons/battery.svg" alt="">
+                <h1 class="font-bold" id="battery">70%</h1>
+            </div>
+        </div>
+   <hr class="border-none">
+    <div class="flex pb-2 w-[95%] mx-auto justify-between items-center mt-8">
+        <div class="flex space-x-5 items-center">
+            <a href="/index.html">
+                <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#0000000000" stroke-width="0.144"> <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#000000"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#000000"></path> </g></svg>
+            </a>
+
+            <h1 class="font-bold text-lg">Next post</h1>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+            <h1 class="font-bold text-primary_blue">Next</h1>
+        </div>
+    </div>
+    
+    <div id="fullscreen" class="w-full">
+        <img id="fullscreenImage" class="w-full" src="/images/profile/mathanmithun-main.jpg" alt="">
+    </div>
+    <div class="w-[95%] flex mx-auto justify-between items-center">
+        <div class="flex items-center gap-2 py-3">
+            <h1 class="font-semibold text-lg">Recents</h1>
+            <span class="mt-1"><svg width="13px" height="13px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="2"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="6.144"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g><g id="SVGRepo_iconCarrier"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g></svg></span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="bg-black/70 rounded-2xl py-[5px] px-3 flex gap-2 items-center">
+                <span>
+                    <svg fill="#ffffff" width="15px" height="15px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.8400000000000001"><path d="M25.5 6c-.66 0-.648 1 0 1h3c.286 0 .5.214.5.5v21c0 .286-.214.5-.5.5h-21c-.286 0-.5-.214-.5-.5v-3c0-.66-1-.664-1 0v3c0 .822.678 1.5 1.5 1.5h21c.822 0 1.5-.678 1.5-1.5v-21c0-.822-.678-1.5-1.5-1.5zm-24-6C.678 0 0 .678 0 1.5v21c0 .822.678 1.5 1.5 1.5h21c.822 0 1.5-.678 1.5-1.5v-21c0-.822-.678-1.5-1.5-1.5zm0 1h21c.286 0 .5.214.5.5v21c0 .286-.214.5-.5.5h-21c-.286 0-.5-.214-.5-.5v-21c0-.286.214-.5.5-.5z"></path></g><g id="SVGRepo_iconCarrier"><path d="M25.5 6c-.66 0-.648 1 0 1h3c.286 0 .5.214.5.5v21c0 .286-.214.5-.5.5h-21c-.286 0-.5-.214-.5-.5v-3c0-.66-1-.664-1 0v3c0 .822.678 1.5 1.5 1.5h21c.822 0 1.5-.678 1.5-1.5v-21c0-.822-.678-1.5-1.5-1.5zm-24-6C.678 0 0 .678 0 1.5v21c0 .822.678 1.5 1.5 1.5h21c.822 0 1.5-.678 1.5-1.5v-21c0-.822-.678-1.5-1.5-1.5zm0 1h21c.286 0 .5.214.5.5v21c0 .286-.214.5-.5.5h-21c-.286 0-.5-.214-.5-.5v-21c0-.286.214-.5.5-.5z"></path></g></svg>
+                </span>
+                <h1 class="uppercase text-white text-sm">select multiple</h1>
+            </div>
+
+            <div class="flex items-center">
+                <span class="bg-black/70 p-[5px] scale-125 rounded-full">
+                    <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#fffff" stroke-width="0.672"> <path d="M12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 16.8V9.2C3 8.0799 3 7.51984 3.21799 7.09202C3.40973 6.71569 3.71569 6.40973 4.09202 6.21799C4.51984 6 5.0799 6 6.2 6H7.25464C7.37758 6 7.43905 6 7.49576 5.9935C7.79166 5.95961 8.05705 5.79559 8.21969 5.54609C8.25086 5.49827 8.27836 5.44328 8.33333 5.33333C8.44329 5.11342 8.49827 5.00346 8.56062 4.90782C8.8859 4.40882 9.41668 4.08078 10.0085 4.01299C10.1219 4 10.2448 4 10.4907 4H13.5093C13.7552 4 13.8781 4 13.9915 4.01299C14.5833 4.08078 15.1141 4.40882 15.4394 4.90782C15.5017 5.00345 15.5567 5.11345 15.6667 5.33333C15.7216 5.44329 15.7491 5.49827 15.7803 5.54609C15.943 5.79559 16.2083 5.95961 16.5042 5.9935C16.561 6 16.6224 6 16.7454 6H17.8C18.9201 6 19.4802 6 19.908 6.21799C20.2843 6.40973 20.5903 6.71569 20.782 7.09202C21 7.51984 21 8.0799 21 9.2V16.8C21 17.9201 21 18.4802 20.782 18.908C20.5903 19.2843 20.2843 19.5903 19.908 19.782C19.4802 20 18.9201 20 17.8 20H6.2C5.0799 20 4.51984 20 4.09202 19.782C3.71569 19.5903 3.40973 19.2843 3.21799 18.908C3 18.4802 3 17.9201 3 16.8Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 16.8V9.2C3 8.0799 3 7.51984 3.21799 7.09202C3.40973 6.71569 3.71569 6.40973 4.09202 6.21799C4.51984 6 5.0799 6 6.2 6H7.25464C7.37758 6 7.43905 6 7.49576 5.9935C7.79166 5.95961 8.05705 5.79559 8.21969 5.54609C8.25086 5.49827 8.27836 5.44328 8.33333 5.33333C8.44329 5.11342 8.49827 5.00346 8.56062 4.90782C8.8859 4.40882 9.41668 4.08078 10.0085 4.01299C10.1219 4 10.2448 4 10.4907 4H13.5093C13.7552 4 13.8781 4 13.9915 4.01299C14.5833 4.08078 15.1141 4.40882 15.4394 4.90782C15.5017 5.00345 15.5567 5.11345 15.6667 5.33333C15.7216 5.44329 15.7491 5.49827 15.7803 5.54609C15.943 5.79559 16.2083 5.95961 16.5042 5.9935C16.561 6 16.6224 6 16.7454 6H17.8C18.9201 6 19.4802 6 19.908 6.21799C20.2843 6.40973 20.5903 6.71569 20.782 7.09202C21 7.51984 21 8.0799 21 9.2V16.8C21 17.9201 21 18.4802 20.782 18.908C20.5903 19.2843 20.2843 19.5903 19.908 19.782C19.4802 20 18.9201 20 17.8 20H6.2C5.0799 20 4.51984 20 4.09202 19.782C3.71569 19.5903 3.40973 19.2843 3.21799 18.908C3 18.4802 3 17.9201 3 16.8Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-[2px] items-center mt-[2px]">
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/mathanmithun-main.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/2.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/5.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/11.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/35.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/41.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/47.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/profile/56.jpg" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-8.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-15.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-1.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-16.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-2.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-4.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-7.png" alt="">
+        </div>
+        <div class=" bg-white flex justify-center items-center">
+            <img class="w-full h-full object-cover clickable-image" src="/images/search/grid-11.png" alt="">
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="grid w-[100%] grid-cols-5 items-center bg-white border-t-[1px] border-gray-200 justify-center py-3 fixed bottom-0 max-w-md">
+        <div class="w-[20%] mx-auto">
+            <a href="/home.html"><img src="/icons/home.svg" alt=""></a>
+        </div>
+        <div class="w-[20%] mx-auto">
+            <a href="/search.html"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="0.144"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
+        </div>
+        <div class="w-[20%] mx-auto">
+            <a href="#"><img src="/icons/ss-Icon.svg" alt=""></a>
+        </div>
+        <div class="w-[20%] mx-auto">
+            <a href="/reels.html"><img src="/icons/pack-icons.svg" alt=""></a>
+        </div>
+        <div class="w-[20%] mx-auto">
+            <a href="/index.html"><img class="rounded-full border-2 border-black scale-125" src="./icons/MaThanMiThun.jpg" alt=""></a>
+        </div>
+    </div>
+  </section>
+</body>
+<script>
+    // Get all clickable images
+    const clickableImages = document.querySelectorAll('.clickable-image');
+  
+    // Loop through each clickable image and add click event listener
+    clickableImages.forEach(image => {
+      image.addEventListener('click', () => {
+        const imageUrl = image.getAttribute('src');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        fullscreenImage.setAttribute('src', imageUrl);
+        document.getElementById('fullscreen').classList.remove('hidden');
+      });
+    });
+  
+    // Close fullscreen on click
+    document.getElementById('closeFullscreen').addEventListener('click', () => {
+      document.getElementById('fullscreen').classList.add('hidden');
+    });
+  </script>
+
+<script>
+    function getCurrentTime() {
+        const currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+
+        // Convert hours to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+        // Add leading zero to single digit minutes
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+
+        // Format the time
+        const currentTimeString = hours + ':' + minutes + ' ' + ampm;
+
+        return currentTimeString;
+    }
+
+    // Update the time every second
+    function updateTime() {
+        document.getElementById('currentTime').innerHTML = getCurrentTime();
+        setTimeout(updateTime, 1000); // Update every second
+    }
+
+    // Call updateTime once to start immediately
+    updateTime();
+</script>
+
+<script>
+    function getBatteryPercentage() {
+        // Check if Battery Status API is supported
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(function (battery) {
+                // Update battery percentage when it changes
+                function updateBatteryStatus() {
+                    var batteryPercentage = Math.round(battery.level * 100);
+                    document.getElementById('battery').textContent = batteryPercentage + "%";
+                }
+
+                // Initial call to update battery status
+                updateBatteryStatus();
+
+                // Listen for changes in battery status
+                battery.addEventListener('levelchange', updateBatteryStatus);
+            });
+        } else if ('battery' in navigator) {
+            // For older implementations that use navigator.battery
+            var batteryPercentage = Math.round(navigator.battery.level * 100);
+            document.getElementById('battery').textContent = batteryPercentage + "%";
+        } else {
+            // Fallback to a default value if battery information is not available
+            document.getElementById('battery').textContent = "N";
+        }
+    }
+
+    // Call the function to get battery percentage when the page loads
+    window.onload = getBatteryPercentage;
+</script>
+</html>

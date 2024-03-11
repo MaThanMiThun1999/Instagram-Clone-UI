@@ -1,17 +1,18 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="instagram clone">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="instagram clone">
     <meta name="keywords" content="HTML,CSS,Tailwind,mathanmithun,instagram,clone,ui">
     <meta name="author" content="mathanmithun">
     <title>Instagram Clone UI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="/icons/favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/icons/apple-touch.png">
-  <style type="text/tailwindcss">
-     @layer components {
+    <link rel="shortcut icon" href="./icons/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./icons/apple-touch.png">
+    <style type="text/tailwindcss">
+        @layer components {
   .card {
     background-image: linear-gradient(
   220deg,
@@ -39,455 +40,588 @@
  }
 }
   </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-            primary_blue: "#1877F2",
-            secondary_gray: "#EFEFEF",
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary_blue: "#1877F2",
+                        secondary_gray: "#EFEFEF",
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 </head>
+
 <body>
-  <section class="max-w-md mx-auto overflow-hidden md:border-x-2 md:shadow-2xl">
+    <section class="max-w-md mx-auto overflow-hidden md:border-x-2 md:shadow-2xl">
 
-    <div id="fullscreen" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50">
- 
-      <div class="flex flex-col items-center justify-center h-full">
-          <div id="closeFullscreen" class="absolute top-4 right-4 cursor-pointer text-white text-lg">Close</div>
-          <div class="w-[95%] mx-auto md:max-w-md">
-              <div class="w-full bg-white rounded-t-lg">
-                  <div class="flex items-center justify-between py-2 w-[95%] mx-auto">
-                      <div class="flex items-center gap-2">
-                          <img class="w-7 h-7 rounded-full" src="/icons/MaThanMiThun.jpg" alt="">
-                      <h1 class="font-bold">its.me_mathan_mithun</h1>
-                      </div>
-                      <div>
-                          <img src="./icons/dots.svg" alt="">
-                      </div>
-                  </div>
-              </div>
-              <img id="fullscreenImage" class="max-h-full max-w-full md:max-w-md" src="" alt="">
-              <div class="w-full bg-white rounded-b-lg">
-                  <div class="flex w-[95%] py-2 mx-auto items-center justify-between">
-                      <div class="flex items-center gap-4">
-                          <img src="/icons/heart-Vector.svg" alt="" srcset="">
-                          <img src="/icons/comment.svg" alt="" srcset="">
-                          <img class="mt-1" src="/icons/share.svg" alt="" srcset="">
-                                                          
-                      </div>
-                      <div>
-                          <img src="/icons/saved.svg" alt="">
-                      </div>
-                  </div>
-              </div>
-          </div>
+        <div id="fullscreen" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50">
+
+            <div class="flex flex-col items-center justify-center h-full">
+                <div id="closeFullscreen" class="absolute top-4 right-4 cursor-pointer text-white text-lg">Close</div>
+                <div class="w-[95%] mx-auto md:max-w-md">
+                    <div class="w-full bg-white rounded-t-lg">
+                        <div class="flex items-center justify-between py-2 w-[95%] mx-auto">
+                            <div class="flex items-center gap-2">
+                                <img class="w-7 h-7 rounded-full" src="./icons/MaThanMiThun.jpg" alt="">
+                                <h1 class="font-bold">its.me_mathan_mithun</h1>
+                            </div>
+                            <div>
+                                <img src="./icons/dots.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <img id="fullscreenImage" class="max-h-full max-w-full md:max-w-md" src="" alt="">
+                    <div class="w-full bg-white rounded-b-lg">
+                        <div class="flex w-[95%] py-2 mx-auto items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <img src="./icons/heart-Vector.svg" alt="" srcset="">
+                                <img src="./icons/comment.svg" alt="" srcset="">
+                                <img class="mt-1" src="./icons/share.svg" alt="" srcset="">
+
+                            </div>
+                            <div>
+                                <img src="./icons/saved.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    
-  </div>
 
-        <div class="w-[100%] border-b bg-white pb-[0px] mx-auto px-4 fixed top-0 max-w-md md:max-w-md flex justify-between items-center">
+        <div
+            class="w-[100%] border-b bg-white pb-[0px] mx-auto px-4 fixed top-0 max-w-md md:max-w-md flex justify-between items-center">
             <div>
                 <h1 class="font-bold" id="currentTime">9:20 AM</h1>
             </div>
             <div class="flex space-x-1 items-center">
-                <img src="/icons/Mobile-Signal.svg" alt="">
-                <img src="/icons/Wifi-icon.svg" alt="">
-                <img src="/icons/battery.svg" alt="">
+                <img src="./icons/Mobile-Signal.svg" alt="">
+                <img src="./icons/Wifi-icon.svg" alt="">
+                <img src="./icons/battery.svg" alt="">
                 <h1 class="font-bold" id="battery">70%</h1>
             </div>
         </div>
-   <hr class="border-none">
-    <div class="flex pb-2 w-[95%] mx-auto justify-between items-center mt-8">
-        <div class="flex space-x-2 items-center">
-            <h1 class="font-bold">its.me_mathan_mithun</h1>
-            <span><svg width="13px" height="13px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="6.144"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g><g id="SVGRepo_iconCarrier"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g></svg></span>
-            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
-        </div>
-        <div class="flex items-center justify-center gap-2">
-            <img src="/icons/plus-Icons.svg" alt="">
-            <img src="/icons/three-dot-Icons.svg" alt="">
-        </div>
-    </div>
-    <hr class="border-b">
-    <div class="grid grid-cols-3 gap-5">
-        <dir class="col-span-1 mt-4 my-auto pl-[30px]">
-            <div class="w-[100px] rounded-full p-1 card">
-                <img class="w-full rounded-full border-4 border-white " src="./icons/MaThanMiThun.jpg" alt="">
+        <hr class="border-none">
+        <div class="flex pb-2 w-[95%] mx-auto justify-between items-center mt-8">
+            <div class="flex space-x-2 items-center">
+                <h1 class="font-bold">its.me_mathan_mithun</h1>
+                <span><svg width="13px" height="13px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee"
+                            stroke-width="6.144">
+                            <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z"
+                                fill="#000000"></path>
+                        </g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z"
+                                fill="#000000"></path>
+                        </g>
+                    </svg></span>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
             </div>
-        </dir>
-        <div class="col-span-2 flex items-center justify-center gap-4">
-            <div class="text-center">
-                <h1 class="font-bold">400</h1>
-                <h1 class="font-normal">Post</h1>
-            </div>
-            <div class="text-center">
-                <h1 class="font-bold">34K</h1>
-                <h1 class="font-normal">Followers</h1>
-            </div>
-            <div class="text-center">
-                <h1 class="font-bold">4,188</h1>
-                <h1 class="font-normal">Followings</h1>
+            <div class="flex items-center justify-center gap-2">
+                <img src="./icons/plus-Icons.svg" alt="">
+                <img src="./icons/three-dot-Icons.svg" alt="">
             </div>
         </div>
-    </div>
-    <h1 class="w-[95%] mx-auto font-semibold mt-1 text-sm">⌁MaͥThͣaͫnMᎥThบn⌁</h1>
-    <h1 class="font-light text-[13px] leading-[15px] bg-secondary_gray inline mt-1 ml-2 px-2 py-[1px] rounded-xl">@ its.me_mathan_mithun</h1>
-    <a target="_blank" href="https://in.pinterest.com/mathanmithun/mathanmithun/"><p class="w-[95%] mx-auto text-[13px] leading-[15px] text-[#0093CF]">Photographer</p></a>
-    <p class="w-[95%] mx-auto text-left text-[15px] leading-[1.2rem]">
-        𝐓𝐍𝟑𝟒✌🏼<br>
-        𝘾𝙤𝙢𝙥𝙪𝙏𝙚𝙍👨‍🔧<br>
-        𝙢𝙪𝙎𝙞𝙘🎧<br>
-        𝙎𝙝𝙞𝙑𝙖𝙣📿<br>
-        𝙏𝙝𝙚 𝙂𝙪𝙮 𝙬𝙄𝙩𝙝 𝙥𝙐𝙧𝙚❤️<br>
-        𝘿𝙚𝙑𝙞𝙇_𝙤𝙁_𝙢𝙖𝙃_𝙊𝙬𝙉_𝙃𝙚𝙡𝙇😈<br>
-        ♫ ᴹᵁˢᴵᶜ 🎧ㅤ ㅤㅤㅤㅤㅤㅤㅤ 0:00●━━━━━━─────── <br> 
-        4:27⇆ ㅤㅤㅤㅤㅤ ◁ㅤㅤ❚❚ㅤㅤ▷↻<br>
-        <a target="_blank" href="https://www.google.com/search?q=mathanmithun&tbm=isch&hl=en-GB&nfpr=1&cs=0&rlz=1C1GCEA_enIN1067IN1068&sa=X&ved=2ahUKEwiB9bGhnOmEAxWI6jgGHa5oDJ8QvgV6BAgBEE0&biw=1349&bih=633"><span class="text-[#0070B8] text-[13px]">#mathanmithun</span></a><br>
-        <a class="text-[13px] -ml-1 font-bold" href="https://github.com/MaThanMiThun1999"><span><svg class="inline" width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(-45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="0.096"> <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></span> https://github.com/MaThanMiThun1999</a>
-    </p>
-    <div class="w-full my-1">
-        <div class="flex w-[95%] bg-secondary_gray px-3 py-2 mx-auto items-center justify-between rounded-lg">
-            <div>
-                <h1 class="text-[13px] leading-[15px] font-semibold">Professional dashboard</h1>
-                <h6 class="text-[12px] leading-[15px]">New tools are now available.</h6>
-            </div>
-            <div>
-                <div class="w-2 h-2 bg-primary_blue rounded-full"></div>
+        <hr class="border-b">
+        <div class="grid grid-cols-3 gap-5">
+            <dir class="col-span-1 mt-4 my-auto pl-[30px]">
+                <div class="w-[100px] rounded-full p-1 card">
+                    <img class="w-full rounded-full border-4 border-white " src="./icons/MaThanMiThun.jpg" alt="">
+                </div>
+            </dir>
+            <div class="col-span-2 flex items-center justify-center gap-4">
+                <div class="text-center">
+                    <h1 class="font-bold">400</h1>
+                    <h1 class="font-normal">Post</h1>
+                </div>
+                <div class="text-center">
+                    <h1 class="font-bold">34K</h1>
+                    <h1 class="font-normal">Followers</h1>
+                </div>
+                <div class="text-center">
+                    <h1 class="font-bold">4,188</h1>
+                    <h1 class="font-normal">Followings</h1>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex w-[95%] mx-auto my-1 items-center lg:justify-normal md:justify-normal justify-center flex-grow gap-2">
-        <h1 class="text-[14px] text-center font-semibold w-[33.3%] py-[3px] rounded-md bg-gray-300">Edit profile</h1>
-        <h1 class="text-[14px] text-center font-semibold w-[33.3%] py-[3px] rounded-md bg-gray-300">Share profile</h1>
-        <h1 class="text-[14px] text-center font-semibold w-[33.3%] md:px-[19px] px-[15px] py-[3px] rounded-md bg-gray-300">Contact</h1>
-        <div class="px-[6px] py-[6px] rounded-md bg-gray-300">
-            <span class="">
-                <svg width="15px" height="15px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="6.144"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g><g id="SVGRepo_iconCarrier"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"></path></g></svg>
-            </span>
-        </div>
-    </div>
-    <div class="w-[100%] mx-auto my-3 ml-3">
-        <div class="flex overflow-x-scroll space-x-4 w-full no-scrollbar">
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">M</h1>
+        <h1 class="w-[95%] mx-auto font-semibold mt-1 text-sm">⌁MaͥThͣaͫnMᎥThบn⌁</h1>
+        <h1 class="font-light text-[13px] leading-[15px] bg-secondary_gray inline mt-1 ml-2 px-2 py-[1px] rounded-xl">@
+            its.me_mathan_mithun</h1>
+        <a target="_blank" href="https://in.pinterest.com/mathanmithun/mathanmithun/">
+            <p class="w-[95%] mx-auto text-[13px] leading-[15px] text-[#0093CF]">Photographer</p>
+        </a>
+        <p class="w-[95%] mx-auto text-left text-[15px] leading-[1.2rem]">
+            𝐓𝐍𝟑𝟒✌🏼<br>
+            𝘾𝙤𝙢𝙥𝙪𝙏𝙚𝙍👨‍🔧<br>
+            𝙢𝙪𝙎𝙞𝙘🎧<br>
+            𝙎𝙝𝙞𝙑𝙖𝙣📿<br>
+            𝙏𝙝𝙚 𝙂𝙪𝙮 𝙬𝙄𝙩𝙝 𝙥𝙐𝙧𝙚❤️<br>
+            𝘿𝙚𝙑𝙞𝙇_𝙤𝙁_𝙢𝙖𝙃_𝙊𝙬𝙉_𝙃𝙚𝙡𝙇😈<br>
+            ♫ ᴹᵁˢᴵᶜ 🎧ㅤ ㅤㅤㅤㅤㅤㅤㅤ 0:00●━━━━━━─────── <br>
+            4:27⇆ ㅤㅤㅤㅤㅤ ◁ㅤㅤ❚❚ㅤㅤ▷↻<br>
+            <a target="_blank"
+                href="https://www.google.com/search?q=mathanmithun&tbm=isch&hl=en-GB&nfpr=1&cs=0&rlz=1C1GCEA_enIN1067IN1068&sa=X&ved=2ahUKEwiB9bGhnOmEAxWI6jgGHa5oDJ8QvgV6BAgBEE0&biw=1349&bih=633"><span
+                    class="text-[#0070B8] text-[13px]">#mathanmithun</span></a><br>
+            <a class="text-[13px] -ml-1 font-bold" href="https://github.com/MaThanMiThun1999"><span><svg class="inline"
+                        width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        transform="rotate(-45)">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee"
+                            stroke-width="0.096">
+                            <path
+                                d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg></span> https://github.com/MaThanMiThun1999</a>
+        </p>
+        <div class="w-full my-1">
+            <div class="flex w-[95%] bg-secondary_gray px-3 py-2 mx-auto items-center justify-between rounded-lg">
+                <div>
+                    <h1 class="text-[13px] leading-[15px] font-semibold">Professional dashboard</h1>
+                    <h6 class="text-[12px] leading-[15px]">New tools are now available.</h6>
                 </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">A</h1>
+                <div>
+                    <div class="w-2 h-2 bg-primary_blue rounded-full"></div>
                 </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">T</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">H</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">A</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">N</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">M</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">I</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">T</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">H</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">U</h1>
-                </div>
-            </section>
-            <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
-                <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
-                    <h1 class="font-extrabold text-4xl">N</h1>
-                </div>
-            </section>
-        </div>
-    </div>
-    <div class="w-full py-2 bg-white">
-        <div class="grid grid-cols-3 w-[95%] mx-auto items-center">
-            <div class="w-[33.3] bg-white flex justify-center items-center">
-                <img src="/icons/row-vector.svg" alt="">
-            </div>
-            <div class="w-[33.3] bg-white flex justify-center items-center">
-                <img src="/icons/reels-Icon.svg" alt="">
-            </div>
-            <div class="w-[33.3] bg-white flex justify-center items-center">
-                <img src="/icons/tag-Icons.svg" alt="">
             </div>
         </div>
-    </div>
-    <div class="grid grid-cols-3 gap-[2px] items-center mt-[2px]">
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/1.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/2.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/3.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/4.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/5.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/6.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/7.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/8.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/9.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/10.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/11.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/12.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/13.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/14.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/15.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/16.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/17.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/18.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/19.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/20.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/21.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/22.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/23.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/24.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/25.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/26.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/27.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/28.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/29.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/30.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/31.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/32.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/33.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/34.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/35.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/36.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/37.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/38.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/39.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/40.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/41.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/42.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/43.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/44.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/45.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/46.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/47.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/48.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/49.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/50.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/51.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/52.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/53.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/54.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/55.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/56.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/57.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/58.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/59.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/60.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/61.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/62.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/63.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/64.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/65.jpg" alt="">
-        </div>
-        <div class=" bg-white flex justify-center items-center cursor-pointer">
-            <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/66.jpg" alt="">
-        </div>
-        
-    </div>
-    
-    <div class="grid w-[100%] grid-cols-5 items-center bg-white border-t-[1px] border-gray-200 justify-center py-3 fixed bottom-0 max-w-md">
-        <div class="w-[20%] mx-auto">
-            <a href="/home.html"><img src="/icons/home.svg" alt=""></a>
-        </div>
-        <div class="w-[20%] mx-auto">
-            <a href="/search.html"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee" stroke-width="0.144"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
-        </div>
-        <div class="w-[20%] mx-auto">
-            <a href="/upload.html"><img src="/icons/ss-Icon.svg" alt=""></a>
-        </div>
-        <div class="w-[20%] mx-auto">
-            <a href="/reels.html"><img src="/icons/pack-icons.svg" alt=""></a>
-        </div>
-        <div class="w-[20%] mx-auto">
-            <a href="#"><img class="rounded-full border-2 border-black scale-125" src="./icons/MaThanMiThun.jpg" alt=""></a>
-        </div>
-    </div>
-  </section>
+        <div
+            class="flex w-[95%] mx-auto my-1 items-center lg:justify-normal md:justify-normal justify-center flex-grow gap-2">
+            <h1 class="text-[14px] text-center font-semibold w-[33.3%] py-[3px] rounded-md bg-gray-300">Edit profile
+            </h1>
+            <h1 class="text-[14px] text-center font-semibold w-[33.3%] py-[3px] rounded-md bg-gray-300">Share profile
+            </h1>
+            <h1
+                class="text-[14px] text-center font-semibold w-[33.3%] md:px-[19px] px-[15px] py-[3px] rounded-md bg-gray-300">
+                Contact</h1>
+            <div class="px-[6px] py-[6px] rounded-md bg-gray-300">
+                <span class="">
+                    <svg width="15px" height="15px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee"
+                            stroke-width="6.144">
+                            <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z"
+                                fill="#000000"></path>
+                        </g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z"
+                                fill="#000000"></path>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="w-[100%] mx-auto my-3 ml-3">
+            <div class="flex overflow-x-scroll space-x-4 w-full no-scrollbar">
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">M</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">A</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">T</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">H</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">A</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">N</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">M</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">I</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">T</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">H</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">U</h1>
+                    </div>
+                </section>
+                <section class="flex-shrink-0 border-[2px] rounded-full border-gray-500 cursor-pointer">
+                    <div class="w-14 h-14 flex rounded-full justify-center items-center bg-[#F2F2F2] m-[1px]">
+                        <h1 class="font-extrabold text-4xl">N</h1>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="w-full py-2 bg-white">
+            <div class="grid grid-cols-3 w-[95%] mx-auto items-center">
+                <div class="w-[33.3] bg-white flex justify-center items-center">
+                    <img src="./icons/row-vector.svg" alt="">
+                </div>
+                <div class="w-[33.3] bg-white flex justify-center items-center">
+                    <img src="./icons/reels-Icon.svg" alt="">
+                </div>
+                <div class="w-[33.3] bg-white flex justify-center items-center">
+                    <img src="./icons/tag-Icons.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-[2px] items-center mt-[2px]">
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/1.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/2.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/3.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/4.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/5.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/6.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/7.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/8.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/9.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/10.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/11.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/12.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/13.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/14.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/15.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/16.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/17.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/18.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/19.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/20.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/21.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/22.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/23.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/24.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/25.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/26.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/27.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/28.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/29.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/30.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/31.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/32.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/33.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/34.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/35.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/36.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/37.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/38.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/39.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/40.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/41.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/42.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/43.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/44.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="/images/profile/45.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/46.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/47.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/48.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/49.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/50.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/51.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/52.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/53.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/54.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/55.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/56.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/57.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/58.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/59.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/60.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/61.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/62.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/63.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/64.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/65.jpg"
+                    alt="">
+            </div>
+            <div class=" bg-white flex justify-center items-center cursor-pointer">
+                <img loading="lazy" class="w-full h-full object-cover clickable-image" src="./images/profile/66.jpg"
+                    alt="">
+            </div>
+
+        </div>
+
+        <div
+            class="grid w-[100%] grid-cols-5 items-center bg-white border-t-[1px] border-gray-200 justify-center py-3 fixed bottom-0 max-w-md">
+            <div class="w-[20%] mx-auto">
+                <a href="./home.html"><img src="./icons/home.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="./search.html"><svg width="22px" height="22px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ee"
+                            stroke-width="0.144">
+                            <path
+                                d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="./upload.html"><img src="./icons/ss-Icon.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="./reels.html"><img src="./icons/pack-icons.svg" alt=""></a>
+            </div>
+            <div class="w-[20%] mx-auto">
+                <a href="#"><img class="rounded-full border-2 border-black scale-125" src="./icons/MaThanMiThun.jpg"
+                        alt=""></a>
+            </div>
+        </div>
+    </section>
 </body>
 <script>
-  // Get all clickable images
-  const clickableImages = document.querySelectorAll('.clickable-image');
+    // Get all clickable images
+    const clickableImages = document.querySelectorAll('.clickable-image');
 
-  // Loop through each clickable image and add click event listener
-  clickableImages.forEach(image => {
-    image.addEventListener('click', () => {
-      const imageUrl = image.getAttribute('src');
-      const fullscreenImage = document.getElementById('fullscreenImage');
-      fullscreenImage.setAttribute('src', imageUrl);
-      document.getElementById('fullscreen').classList.remove('hidden');
+    // Loop through each clickable image and add click event listener
+    clickableImages.forEach(image => {
+        image.addEventListener('click', () => {
+            const imageUrl = image.getAttribute('src');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.setAttribute('src', imageUrl);
+            document.getElementById('fullscreen').classList.remove('hidden');
+        });
     });
-  });
 
-  // Close fullscreen on click
-  document.getElementById('closeFullscreen').addEventListener('click', () => {
-    document.getElementById('fullscreen').classList.add('hidden');
-  });
+    // Close fullscreen on click
+    document.getElementById('closeFullscreen').addEventListener('click', () => {
+        document.getElementById('fullscreen').classList.add('hidden');
+    });
 </script>
 
 <script>
@@ -550,4 +684,5 @@
     // Call the function to get battery percentage when the page loads
     window.onload = getBatteryPercentage;
 </script>
+
 </html>

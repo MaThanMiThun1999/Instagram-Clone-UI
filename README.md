@@ -8,6 +8,11 @@
 
 [https://mathanmithun1999.github.io/Instagram-Clone-UI/](https://mathanmithun1999.github.io/Instagram-Clone-UI/)
 
+<h2>Project Screenshots:</h2>
+<h3>Home Page:</h3>
+
+![Image Alt Text](https://s6.ezgif.com/tmp/ezgif-6-6cfd8ad2c8.gif)
+
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
@@ -16,3 +21,4 @@ Technologies used in the project:
 *   CSS3
 *   JavaScript
 *   TailwindCSS
+
